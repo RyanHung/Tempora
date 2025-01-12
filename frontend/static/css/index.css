@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+html, body {
+    height : 100%;
+    margin : 0;
+    padding : 0;
+    font-family : "Lato", sans-serif;
+}
+
+#main {
+    position : fixed;
+    width : 100%;
+    height : 100%;
+    left : 0;
+    right : 0;
+    background: rgb(0, 59, 89);
+}
+
+#app {
+    width : 100%;
+    height : 100%;
+    display : flex;
+}
+
+.topnav {
+    overflow: visible;
+    width: 50%; /* Ensures it stretches across the screen */
+    position: fixed; /* Keeps it at the top of the screen */
+    top: 10px; /* Aligns it to the top of the viewport */
+    left: 50%;
+    transform: translateX(-50%); /* Adjusts the element to center */
+    z-index: 1000; /* Ensures it stays above other content */
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+}
+  
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 12px; /* Reduced padding for smaller size */
+    text-decoration: none;
+    font-size: 16px; /* Slightly smaller font size */
+    background-color: transparent; /* Translucent gray background */
+    border-radius: 12px; /* Rounded corners */
+    display: inline-flex; /* Ensure proper alignment */
+    align-items: center;
+    justify-content: center; /* Center text inside button */
+    margin: 5px; /* Add some spacing between buttons */
+    transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+.topnav a.active {
+    background-color: #494545;
+    color: white;
+}
+
+/* CSS for Dropdown Box */
+.dropdown-box {
+    position: absolute;
+    top: 100%;
+    margin-top: 8px; /* Optional: Add spacing between the parent and the dropdown */
+    left: -3px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* Ensure full height of the dropdown box */
+.dropdown-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-box li {
+    display: block; /* Ensure the li takes up the full width */
+}
+
+/* CSS for Links */
+.dropdown-box li a {
+    color: black;
+    text-decoration: none;
+    display: block; /* Ensure the link fills the entire li */
+    height: 100%; /* Make sure the link takes up the full height of the li */
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+.react-datetime-picker {
+    display: inline-flex;
+    position: relative;
+  }
+  
+  .react-datetime-picker,
+  .react-datetime-picker *,
+  .react-datetime-picker *:before,
+  .react-datetime-picker *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .react-datetime-picker--disabled {
+    background-color: #f0f0f0;
+    color: #6d6d6d;
+  }
+  
+  .react-datetime-picker__wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    border: thin solid gray;
+  }
+  
+  .react-datetime-picker__inputGroup {
+    min-width: calc(4px + (4px * 3) + 0.54em * 6 + 0.217em * 2);
+    flex-grow: 1;
+    padding: 0 2px;
+  }
+  
+  .react-datetime-picker__inputGroup__divider {
+    padding: 1px 0;
+    white-space: pre;
+  }
+  
+  .react-datetime-picker__inputGroup__divider,
+  .react-datetime-picker__inputGroup__leadingZero {
+    display: inline-block;
+    font: inherit;
+  }
+  
+  .react-datetime-picker__inputGroup__input {
+    min-width: 0.54em;
+    height: calc(100% - 2px);
+    position: relative;
+    padding: 1px;
+    border: 0;
+    background: none;
+    color: currentColor;
+    font: inherit;
+    box-sizing: content-box;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  
+  .react-datetime-picker__inputGroup__input::-webkit-outer-spin-button,
+  .react-datetime-picker__inputGroup__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  .react-datetime-picker__inputGroup__input:invalid {
+    background: rgba(255, 0, 0, 0.1);
+  }
+  
+  .react-datetime-picker__inputGroup__input--hasLeadingZero {
+    margin-left: -0.54em;
+    padding-left: calc(1px + 0.54em);
+  }
+  
+  .react-datetime-picker__inputGroup__amPm {
+    font: inherit;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+
+    background-color: rgb(160, 160, 160);
+  }
+  
+  .react-datetime-picker__button {
+    border: 0;
+    background: transparent;
+    padding: 4px 6px;
+  }
+  
+  .react-datetime-picker__button:enabled {
+    cursor: pointer;
+  }
+  
+  .react-datetime-picker__button:enabled:hover .react-datetime-picker__button__icon,
+  .react-datetime-picker__button:enabled:focus .react-datetime-picker__button__icon {
+    stroke: #0078d7;
+  }
+  
+  .react-datetime-picker__button:disabled .react-datetime-picker__button__icon {
+    stroke: #6d6d6d;
+  }
+  
+  .react-datetime-picker__button svg {
+    display: inherit;
+  }
+  
+  .react-datetime-picker__calendar,
+  .react-datetime-picker__clock {
+    z-index: 1;
+  }
+  
+  .react-datetime-picker__calendar--closed,
+  .react-datetime-picker__clock--closed {
+    display: none;
+  }
+  
+  .react-datetime-picker__calendar {
+    width: 350px;
+    max-width: 100vw;
+  }
+  
+  .react-datetime-picker__calendar .react-calendar {
+    border-width: thin;
+  }
+
+  .react-calendar {
+    width: 350px;
+    max-width: 100%;
+    background: white;
+    border: 1px solid #a0a096;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.125em;
+  }
+  
+  .react-calendar--doubleView {
+    width: 700px;
+  }
+  
+  .react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+    margin: -0.5em;
+  }
+  
+  .react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+  }
+  
+  .react-calendar,
+  .react-calendar *,
+  .react-calendar *:before,
+  .react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .react-calendar button {
+    margin: 0;
+    border: 0;
+    outline: none;
+  }
+  
+  .react-calendar button:enabled:hover {
+    cursor: pointer;
+  }
+  
+  .react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+  }
+  
+  .react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+  }
+  
+  .react-calendar__navigation button:disabled {
+    background-color: #f0f0f0;
+  }
+  
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font: inherit;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  
+  .react-calendar__month-view__weekdays__weekday {
+    padding: 0.5em;
+  }
+  
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  
+  .react-calendar__month-view__days__day--weekend {
+    color: #d10000;
+  }
+  
+  .react-calendar__month-view__days__day--neighboringMonth,
+  .react-calendar__decade-view__years__year--neighboringDecade,
+  .react-calendar__century-view__decades__decade--neighboringCentury {
+    color: #757575;
+  }
+  
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+  }
+  
+  .react-calendar__tile {
+    max-width: 100%;
+    padding: 10px 6.6667px;
+    background: none;
+    text-align: center;
+    font: inherit;
+    font-size: 0.833em;
+  }
+  
+  .react-calendar__tile:disabled {
+    background-color: #f0f0f0;
+    color: #ababab;
+  }
+  
+  .react-calendar__month-view__days__day--neighboringMonth:disabled,
+  .react-calendar__decade-view__years__year--neighboringDecade:disabled,
+  .react-calendar__century-view__decades__decade--neighboringCentury:disabled {
+    color: #cdcdcd;
+  }
+  
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  
+  .react-calendar__tile--now {
+    background: #ffff76;
+  }
+  
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background: #ffffa9;
+  }
+  
+  .react-calendar__tile--hasActive {
+    background: #76baff;
+  }
+  
+  .react-calendar__tile--hasActive:enabled:hover,
+  .react-calendar__tile--hasActive:enabled:focus {
+    background: #a9d4ff;
+  }
+  
+  .react-calendar__tile--active {
+    background: #006edc;
+    color: white;
+  }
+  
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    background: #1087ff;
+  }
+  
+  .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+  }
+
+  .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    }
+
+    .remove-btn:hover {
+        color: darkred; /* Change color on hover */
+    }

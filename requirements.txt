@@ -1,0 +1,5 @@
+django
+djangorestframework
+pydantic
+pydantic_ai
+python-dotenv
